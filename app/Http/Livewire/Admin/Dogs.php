@@ -27,7 +27,7 @@ class Dogs extends Component
     public $modalConfirmDeleteVisible = false;
     public $modalConfirmPhotoVisible = false;
     public $modalConfirmEditVisible = false;
-    public Post $updatingPost;
+    // public Post $updatingPost;
 
     protected $rules = [
         'titlePl' => 'required',

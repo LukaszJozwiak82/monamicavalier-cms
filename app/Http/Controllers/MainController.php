@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\View;
 class MainController extends Controller
 {
     public function index(){
-        $posts = Post::where('status',1)->get();
+        $posts = Post::where('status',1)
+        ->orderByDesc('id')
+        ->get();
         return view('main',[ 'posts' => $posts]);
     }
 }

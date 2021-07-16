@@ -14,15 +14,15 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        // Category::create([
-        //     'name' => 'Post',
-        //     'description' => 'Post content'
-        // ]);
+        Category::create([
+            'name' => 'Post',
+            'description' => 'Post content'
+        ]);
 
-        // Category::create([
-        //     'name' => 'About',
-        //     'description' => 'About content'
-        // ]);
+        Category::create([
+            'name' => 'About',
+            'description' => 'About content'
+        ]);
 
         Category::create([
             'name' => 'Dog',

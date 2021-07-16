@@ -42,7 +42,7 @@
                   > --}}
                     <img
                       class="object-cover w-32"
-                      src="{{ url('storage/photos/'.$post->image) }}"
+                      src="{{ url('storage/photos/thumb/'.$post->image) }}"
                       alt=""
                       loading="lazy"
                     />

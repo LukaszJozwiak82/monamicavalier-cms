@@ -9,7 +9,6 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Traits\PostTrait;
 use Livewire\WithFileUploads;
-use App\Models\AdditionalPhoto;
 
 class Posts extends Component
 {
@@ -105,6 +104,8 @@ class Posts extends Component
     }
 
     public function confirmPostEdit($id): void {
+        $this->featuredImg = null;
+        $this->additionalPhotos = null;
         $this->modelId = $id;
         $this->post2 = Post::find($this->modelId);
         $this->titlePl = $this->post2->getTranslation('title', 'pl');
@@ -140,22 +141,8 @@ class Posts extends Component
 
         $this->validate();
 
-        if(!empty($this->featuredImg)){
-            $this->featuredImg->store('public/photos');
-        }
+        $this->storePost($this->getPostData($id));
 
-        $updatingPost = Post::find($id);
-        $updatingPost->update($this->getPostData($updatingPost->image));
-
-        if(!empty($this->additionalPhotos)){
-            foreach($this->additionalPhotos as $photo){
-                $photo->store('public/additional_photos');
-                AdditionalPhoto::create([
-                    'post_id' => $id,
-                    'filename' => $photo->hashName(),
-                ]);
-            }
-        }
         $this->modalConfirmEditVisible = false;
         session()->flash('message', 'Status został zmieniony!');
     }

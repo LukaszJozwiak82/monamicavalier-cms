@@ -16,9 +16,12 @@
     <title>{{ config('app.name') }}</title>
     <style>
         .gradient {
-          background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+            background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
         }
-      </style>
+    </style>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script> --}}
       @livewireStyles
 </head>
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">

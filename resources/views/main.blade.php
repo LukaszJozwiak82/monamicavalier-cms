@@ -6,7 +6,7 @@
 
         @include('partials.dogs')
 
-        @include('partials.news')
+        @livewire('show-posts')
 
         @include('partials.contact')
 
