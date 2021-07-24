@@ -31,9 +31,9 @@
     <div class="w-full mb-4 mt-4">
       <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
     </div>
-    <div class="w-full flex flex-col md:flex-row  py-6">
+    <div class="w-full flex flex-col md:flex-row md:flex-wrap p-6">
      @forelse ($post->photos as $photo)
-          <img wire:click="showModalWindow({{ $post->id }}, {{ $photo->id }})" class="w-1/4 h-auto py-4 px-4 rounded-b shadow" src="{{ url('storage/additional_photos/'.$photo->filename) }}" alt="">
+          <img wire:click="showModalWindow({{ $post->id }}, {{ $photo->id }})" class="md:w-1/3 h-auto py-4 px-4 rounded-b shadow" src="{{ url('storage/additional_photos/'.$photo->filename) }}" alt="">
      @empty
          <p class="w-full text-gray-600 text-xs md:text-sm px-6 pt-6">Brak</p>
      @endforelse
